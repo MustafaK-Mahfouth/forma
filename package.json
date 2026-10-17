@@ -1,0 +1,16 @@
+{
+  "name": "forma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FORMA furniture website - CSS Grid and Sass practice",
+  "scripts": {
+    "dev": "sass --watch scss/main.scss:style.css",
+    "start": "sass --watch scss/main.scss:style.css",
+    "build": "sass --no-source-map scss/main.scss:style.css",
+    "build:prod": "sass --no-source-map scss/main.scss:style.css --style=compressed",
+    "build:site": "npm run build:prod && node scripts/build-site.cjs"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMA | Modern Furniture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header" id="home">
+      <!-- The image and story video share the same header area. -->
+
+      <div class="site-header__media">
+        <img
+          class="site-header__image"
+          src="assets/images/forma-hero-v2.webp"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+        />
+        <video
+          class="site-header__video"
+          id="hero-video"
+          src="assets/videos/generated_video%20(1).mp4"
+          poster="assets/images/forma-hero-v2.webp"
+          width="736"
+          height="400"
+          aria-label="The FORMA brand story"
+          controls
+          playsinline
+          preload="none"
+          hidden
+        ></video>
+      </div>
+
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="navbar__logo" href="#home" aria-label="FORMA home">FORMA</a>
+
+        <button
+          class="navbar__toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="navbar-menu"
+          aria-expanded="false"
+        >
+          <span class="navbar__toggle-line" aria-hidden="true"></span>
+          <span class="navbar__toggle-line" aria-hidden="true"></span>
+          <span class="navbar__toggle-line" aria-hidden="true"></span>
+        </button>
+
+        <div class="navbar__menu" id="navbar-menu">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <a
+              class="navbar__link navbar__link--active"
+              href="#home"
+              aria-current="location"
+              >Home</a
+            >
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#collection">Collection</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#about">About</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#inspiration">Inspiration</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <a class="navbar__cta button button--primary" href="#showroom">
+          <span class="button__text">Visit Showroom</span>
+          <span class="button__icon" aria-hidden="true"
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 18 18 6M6 6h12v12" /></svg
+          ></span>
+        </a>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <!-- This content fades out during the story; the navbar stays available. -->
+        <div class="hero__content" id="hero-content">
+          <p class="hero__eyebrow">
+            Modern Furniture &middot; Thoughtful Design
+          </p>
+          <h1 class="hero__title">
+            Spaces <br />
+            That Feel Like Home.
+          </h1>
+          <p class="hero__description">
+            <strong
+              >Timeless furniture for modern spaces. <br />
+              Crafted with quality, designed for real life.
+            </strong>
+          </p>
+
+          <div class="hero__actions">
+            <a class="hero__actions--button button--primary" href="#collection">
+              <span class="button__text">Explore Collection</span>
+              <span class="button__icon" aria-hidden="true"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+              ></span>
+            </a>
+            <button
+              class="hero__watch"
+              type="button"
+              aria-controls="hero-video"
+              aria-expanded="false"
+              data-hero-play
+            >
+              <span class="hero__watch-icon" aria-hidden="true">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  focusable="false"
+                >
+                  <path d="M5 3.5 12 8l-7 4.5Z" />
+                </svg>
+              </span>
+              <span class="hero__watch-text">Watch Story</span>
+            </button>
+          </div>
+
+          <p class="hero__story-status" role="status" data-story-status></p>
+
+          <a class="hero__scroll" href="#collection">
+            <span class="hero__scroll-icon" aria-hidden="true">
+              <svg
+                width="20"
+                height="40"
+                viewBox="0 0 20 40"
+                fill="none"
+                focusable="false"
+              >
+                <rect
+                  x="2"
+                  y="1"
+                  width="16"
+                  height="26"
+                  rx="8"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                />
+                <path
+                  d="M10 6v8m-3-3 3 3 3-3"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="hero__scroll-text">Scroll to Explore</span>
+          </a>
+        </div>
+      </div>
+
+      <button
+        class="site-header__story-close"
+        type="button"
+        aria-label="Close the story and return to the hero"
+        aria-controls="hero-video"
+        data-hero-close
+        hidden
+      >
+        <span aria-hidden="true">&times;</span>
+        <span>Back to FORMA</span>
+      </button>
+    </header>
+
+    <main class="main" id="main-content">
+      <section class="benefits" aria-label="Why choose FORMA">
+        <ul class="benefits__list">
+          <li class="benefits__item" data-reveal data-reveal-delay="0">
+            <svg
+              class="benefits__icon"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m12 2 10 10-10 10L2 12Z" />
+              <path d="m12 7 5 5-5 5-5-5Z" />
+            </svg>
+            <div class="benefits__content">
+              <h2 class="benefits__title">Timeless Design</h2>
+              <p class="benefits__description">Made for the way you live.</p>
+            </div>
+          </li>
+
+          <li class="benefits__item" data-reveal data-reveal-delay="80">
+            <svg
+              class="benefits__icon"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M20 3c-7-1-14 2-14 9a6 6 0 0 0 6 6c7 0 9-8 8-15Z" />
+              <path d="M4 21 16 9" />
+            </svg>
+            <div class="benefits__content">
+              <h2 class="benefits__title">Quality Materials</h2>
+              <p class="benefits__description">
+                Natural textures. Lasting comfort.
+              </p>
+            </div>
+          </li>
+
+          <li class="benefits__item" data-reveal data-reveal-delay="160">
+            <svg
+              class="benefits__icon"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z" />
+              <path d="m8.5 12 2.5 2.5 4.5-5" />
+            </svg>
+            <div class="benefits__content">
+              <h2 class="benefits__title">Crafted with Care</h2>
+              <p class="benefits__description">
+                Thoughtfulness in every detail.
+              </p>
+            </div>
+          </li>
+
+          <li class="benefits__item" data-reveal data-reveal-delay="240">
+            <svg
+              class="benefits__icon"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M14 17H9M3 17H2V5h12v12m0-9h4l4 5v4h-2" />
+              <path d="M14 13h8" />
+              <circle cx="6" cy="17" r="3" />
+              <circle cx="17" cy="17" r="3" />
+            </svg>
+            <div class="benefits__content">
+              <h2 class="benefits__title">Thoughtful Delivery</h2>
+              <p class="benefits__description">From our space to yours.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="categories"
+        id="collection"
+        aria-labelledby="categories-title"
+      >
+        <div class="categories__header" data-reveal data-reveal-delay="0">
+          <div class="categories__intro">
+            <p class="categories__eyebrow">01 / Find Your Piece</p>
+            <h2 class="categories__title" id="categories-title">
+              Find What Feels <br />
+              Like Home.
+            </h2>
+          </div>
+
+          <div class="categories__summary">
+            <p class="categories__description">
+              Thoughtfully made for every room, every ritual, every version of
+              home.
+            </p>
+            <!-- Explore styled rooms in the Inspiration gallery. -->
+            <a class="categories__view-all" href="#inspiration">
+              <span>Explore the Inspiration</span>
+              <span aria-hidden="true"
+                ><svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+              ></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Image paths are reserved for the category photos we will add next. -->
+        <!-- Category cards lead to room inspiration on this concept landing page. -->
+        <ul class="categories__list">
+          <li class="categories__item" data-reveal data-reveal-delay="0">
+            <a
+              class="categories__card"
+              href="#inspiration"
+              data-category="sofas"
+            >
+              <img
+                class="categories__image"
+                src="assets/images/category-sofas.webp"
+                alt=""
+                width="960"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="categories__content">
+                <div class="categories__details">
+                  <h3 class="categories__name">Sofas</h3>
+                  <p class="categories__caption">Come home to comfort.</p>
+                </div>
+                <span class="categories__arrow" aria-hidden="true"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+                ></span>
+              </div>
+            </a>
+          </li>
+
+          <li class="categories__item" data-reveal data-reveal-delay="80">
+            <a
+              class="categories__card"
+              href="#inspiration"
+              data-category="chairs"
+            >
+              <img
+                class="categories__image"
+                src="assets/images/category-chairs.webp"
+                alt=""
+                width="960"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="categories__content">
+                <div class="categories__details">
+                  <h3 class="categories__name">Chairs</h3>
+                  <p class="categories__caption">Find your favourite seat.</p>
+                </div>
+                <span class="categories__arrow" aria-hidden="true"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+                ></span>
+              </div>
+            </a>
+          </li>
+
+          <li class="categories__item" data-reveal data-reveal-delay="160">
+            <a
+              class="categories__card"
+              href="#inspiration"
+              data-category="tables"
+            >
+              <img
+                class="categories__image"
+                src="assets/images/category-tables.webp"
+                alt=""
+                width="960"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="categories__content">
+                <div class="categories__details">
+                  <h3 class="categories__name">Tables</h3>
+                  <p class="categories__caption">A place to gather.</p>
+                </div>
+                <span class="categories__arrow" aria-hidden="true"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+                ></span>
+              </div>
+            </a>
+          </li>
+
+          <li class="categories__item" data-reveal data-reveal-delay="240">
+            <a
+              class="categories__card"
+              href="#inspiration"
+              data-category="beds"
+            >
+              <img
+                class="categories__image"
+                src="assets/images/category-beds.webp"
+                alt=""
+                width="960"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="categories__content">
+                <div class="categories__details">
+                  <h3 class="categories__name">Beds</h3>
+                  <p class="categories__caption">Your place to unwind.</p>
+                </div>
+                <span class="categories__arrow" aria-hidden="true"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M4 12h16m-6-6 6 6-6 6" /></svg
+                ></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="story" id="about" aria-labelledby="story-title">
+        <div class="story__media" data-reveal>
+          <img
+            class="story__image"
+            src="assets/images/forma-our-story.png"
+            alt="An artisan carefully finishing the wooden frame of a walnut chair."
+            width="1200"
+            height="1000"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="story__content" data-reveal data-reveal-delay="80">
+          <p class="story__eyebrow">02 / Our Story</p>
+
+          <h2 class="story__title" id="story-title">
+            Thoughtfully Made.<br />
+            Naturally Yours.
+          </h2>
+
+          <div>
+            <p class="story__description">
+              A home is more than a place. It’s the quiet morning, the familiar
+              corner, and the comfort of being yourself. We design furniture to
+              become part of those everyday moments.
+            </p>
+
+            <p class="story__description">
+              From the warmth of walnut to the softness of natural fabrics,
+              every choice begins with how a piece feels to live with.
+              Considered proportions and thoughtful details bring beauty and
+              comfort together.
+            </p>
+
+            <div class="story__stats">
+              <div class="story__stat">
+                <p class="story__stat-number">10+</p>
+                <p class="story__stat-description">Years of craft</p>
+              </div>
+
+              <div class="story__stat">
+                <p class="story__stat-number">5K+</p>
+                <p class="story__stat-description">Happy spaces</p>
+              </div>
+
+              <div class="story__stat">
+                <p class="story__stat-number">100%</p>
+                <p class="story__stat-description">Designed with care</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="inspiration" id="inspiration" aria-labelledby="inspiration-title">
+        <div class="inspiration__header" data-reveal>
+          <p class="inspiration__eyebrow">03 / Inspiration</p>
+          <h2 class="inspiration__title" id="inspiration-title">
+            Spaces to Make Your Own.
+          </h2>
+          <p class="inspiration__description">
+            A little inspiration for the way you live.
+          </p>
+        </div>
+
+        <div class="inspiration__gallery">
+          <figure class="inspiration__item inspiration__item--featured" data-reveal>
+            <img
+              class="inspiration__image"
+              src="assets/images/inspiration-dining.webp"
+              alt="A walnut dining table and wooden chairs beside a built-in upholstered bench, lit by a large paper pendant and soft daylight."
+              width="1200"
+              height="1260"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="inspiration__item--caption">
+              <h3 class="inspiration__name">Made for Gathering</h3>
+              <p class="inspiration__label">Dining spaces</p>
+            </figcaption>
+          </figure>
+
+          <figure class="inspiration__item" data-reveal data-reveal-delay="80">
+            <img
+              class="inspiration__image"
+              src="assets/images/inspiration-office.webp"
+              alt="A walnut writing desk with an olive upholstered chair, a bronze lamp, and an open book beside a garden window."
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="inspiration__caption">
+              <h3 class="inspiration__name">Room to Create</h3>
+              <p class="inspiration__label">Workspaces</p>
+            </figcaption>
+          </figure>
+
+          <figure class="inspiration__item" data-reveal data-reveal-delay="160">
+            <img
+              class="inspiration__image"
+              src="assets/images/inspiration-entrance.webp"
+              alt="A sunlit entrance with a floating walnut console, a tall mirror, a ceramic vase, and a linen upholstered bench."
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="inspiration__caption">
+              <h3 class="inspiration__name">A Warm Welcome</h3>
+              <p class="inspiration__label">Thoughtful entrances</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+        <div class="testimonials__header" data-reveal>
+          <p class="testimonials__eyebrow">04 / Kind Words</p>
+          <h2 class="testimonials__title" id="testimonials-title">
+            What Our Customers Say.
+          </h2>
+          <p class="testimonials__description">
+            Thoughtful pieces. Everyday comfort. Stories from home.
+          </p>
+        </div>
+
+        <!-- Fictional customer reviews for this portfolio project. -->
+        <div class="testimonials__list">
+          <article class="testimonials__card" aria-labelledby="review-sarah-title" data-reveal>
+            <div class="testimonials__rating" role="img" aria-label="5 out of 5 stars">
+              <span class="testimonials__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+
+            <h3 class="testimonials__review-title" id="review-sarah-title">
+              Our favourite place to unwind
+            </h3>
+            <blockquote class="testimonials__quote">
+              <p>
+                Soft, comfortable, and beautifully made. The sofa has become
+                the spot we all come home to.
+              </p>
+            </blockquote>
+
+            <div class="testimonials__author">
+              <p class="testimonials__name">Sarah M.</p>
+              <p class="testimonials__product">Luna Sofa</p>
+            </div>
+          </article>
+
+          <article class="testimonials__card" aria-labelledby="review-yousef-title" data-reveal data-reveal-delay="80">
+            <div class="testimonials__rating" role="img" aria-label="5 out of 5 stars">
+              <span class="testimonials__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+
+            <h3 class="testimonials__review-title" id="review-yousef-title">
+              Beautiful in every detail
+            </h3>
+            <blockquote class="testimonials__quote">
+              <p>
+                The walnut brings so much warmth to our dining room.
+                We notice the thoughtful details every day.
+              </p>
+            </blockquote>
+
+            <div class="testimonials__author">
+              <p class="testimonials__name">Yousef A.</p>
+              <p class="testimonials__product">Oak Dining Table</p>
+            </div>
+          </article>
+
+          <article class="testimonials__card" aria-labelledby="review-dina-title" data-reveal data-reveal-delay="160">
+            <div class="testimonials__rating" role="img" aria-label="5 out of 5 stars">
+              <span class="testimonials__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+
+            <h3 class="testimonials__review-title" id="review-dina-title">
+              A lovely experience
+            </h3>
+            <blockquote class="testimonials__quote">
+              <p>
+                Choosing our piece felt easy, and delivery was handled with care.
+                It fits our new home perfectly.
+              </p>
+            </blockquote>
+
+            <div class="testimonials__author">
+              <p class="testimonials__name">Dina H.</p>
+              <p class="testimonials__product">Bedroom Collection</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta" id="showroom" aria-labelledby="cta-title">
+        <div class="cta__media" aria-hidden="true">
+          <!-- Background options: cta-courtyard.webp / cta-walnut-detail.webp / cta-linen.webp -->
+          <img
+            class="cta__image"
+            src="assets/images/cta-courtyard.webp"
+            alt=""
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="cta__content" data-reveal>
+          <h2 class="cta__title" id="cta-title">
+            Bring Your Space<br />
+            to Life.
+          </h2>
+          <p class="cta__description">
+            Thoughtful furniture. A home that feels like you.
+          </p>
+          <a class="cta__button button--primary" href="#contact">
+            Visit Our Showroom
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <a class="footer__logo" href="#home" aria-label="FORMA home">FORMA</a>
+          <p class="footer__description">
+            Thoughtful furniture for spaces<br />
+            that feel like home.
+          </p>
+          <p class="footer__tagline">Designed for the way you live.</p>
+        </div>
+
+        <nav class="footer__navigation" aria-labelledby="footer-explore-title">
+          <h2 class="footer__heading" id="footer-explore-title">Explore</h2>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a class="footer__link" href="#home">Home</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#collection">Collection</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#about">Our Story</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#inspiration">Inspiration</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact">
+          <h2 class="footer__heading">Get in Touch</h2>
+          <!-- Display-only demo email; replace with a real address before adding a mail link. -->
+          <p class="footer__email">hello@forma.example</p>
+          <p class="footer__showroom-title">Visit our showroom</p>
+          <p class="footer__showroom-description">
+            A concept space, imagined for FORMA.
+          </p>
+
+          <div class="footer__socials">
+            <!-- Display-only icons until the real social profile URLs are added. -->
+            <span class="footer__social-item" role="img" aria-label="Instagram">
+              <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+
+            <span class="footer__social-item" role="img" aria-label="Facebook">
+              <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M13.5 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.6 1.6-1.6H17V3.8c-.6-.1-1.5-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z" />
+              </svg>
+            </span>
+
+            <span class="footer__social-item" role="img" aria-label="WhatsApp">
+              <svg class="footer__social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z" />
+                <path d="m8.1 7.4 1.3 2.5-1 1a9 9 0 0 0 4.7 4.7l1-1 2.5 1.3c-.2 1.2-1.1 2-2.3 2-4.9-.4-8.4-4-8.8-8.8 0-1.2.8-2.1 2-2.3Z" transform="translate(1 0) scale(.9)" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 FORMA. All rights reserved.</p>
+        <p class="footer__credit">
+          Made by
+          <a
+            class="footer__credit-link"
+            href="https://github.com/MustafaK-Mahfouth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Mustafa on GitHub (opens in a new tab)"
+          >
+            <span>Mustafa</span>
+            <svg
+              class="footer__credit-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path d="M6 18 18 6M6 6h12v12" />
+            </svg>
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

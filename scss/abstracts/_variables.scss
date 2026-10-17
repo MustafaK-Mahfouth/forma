@@ -1,0 +1,38 @@
+// ===================================
+// FORMA — COLOR SYSTEM
+// ===================================
+
+// Backgrounds
+$color-bg-primary: #F8F4EE;    // Main page background
+$color-bg-secondary: #FFFDF9;  // Cards & light sections
+$color-bg-dark: #342920;       // Footer & dark sections
+
+// Typography
+$color-heading: #261D17;       // H1, H2, H3, headings
+$color-text: #68574A;          // Paragraphs & body text
+$color-text-muted: #8C7A69;    // Subtitles & secondary text
+$color-text-light: #FFFDF9;    // Text on dark backgrounds
+
+// Brand & Interactive Elements
+$color-primary: #A65F32;       // Primary buttons & accents
+$color-link: #68574A;          // Navbar links & text links
+$color-link-hover: #A65F32;    // Link hover color
+
+// Borders & Dividers
+$color-border: #E9DCCB;        // Borders & separators
+
+$font-heading: 'Playfair Display', Georgia, serif;
+$font-body: 'Manrope', Arial, sans-serif;
+$container-max-width: 1320px;
+
+$spacing: (
+  1: 8px,
+  2: 16px,
+  3: 24px,
+  4: 32px,
+  6: 48px,
+  8: 64px,
+  10: 80px,
+  12: 96px,
+  14: 112px
+);

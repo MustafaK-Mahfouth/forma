@@ -1,0 +1,61 @@
+// FORMA typography: Manrope for interface and body copy, Playfair Display for editorial headings.
+body {
+  font-family: $font-body;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $color-bg-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $color-heading;
+  font-family: $font-heading;
+  font-weight: 500;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.625rem, 5vw + 1rem, 6rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  // font-size: clamp(1.875rem, 3vw + 1rem, 3.25rem);
+  // letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.5vw + 0.75rem, 1.625rem);
+}
+
+p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  
+}
+
+::selection {
+  color: $color-text-light;
+  background-color: $color-primary;
+}

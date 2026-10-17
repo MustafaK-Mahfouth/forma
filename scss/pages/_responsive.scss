@@ -1,0 +1,894 @@
+// Loaded after home: shared sizing first, then desktop-to-mobile breakpoints.
+:root {
+  --page-gutter: 8rem;
+}
+
+.site-header {
+  height: auto;
+  min-height: 85svh;
+  display: flow-root;
+}
+
+.navbar {
+  margin-inline: var(--page-gutter);
+  align-items: center;
+  column-gap: 1rem;
+  z-index: 3;
+
+  &__menu {
+    display: contents;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  &__link {
+    padding-block: 0.5rem;
+  }
+
+  &__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    color: $color-heading;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 4px;
+    }
+  }
+
+  &__toggle-line {
+    display: block;
+    width: 20px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+}
+
+.hero {
+  margin-inline: var(--page-gutter);
+
+  &__content {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+.benefits,
+.categories,
+.story,
+.inspiration,
+.testimonials,
+.footer {
+  padding-inline: var(--page-gutter);
+}
+
+.benefits {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: stretch;
+  }
+
+  &__item {
+    min-width: 0;
+    justify-content: center;
+    padding: 0 1.5rem;
+
+    &:not(:last-child)::after {
+      display: none;
+    }
+
+    & + & {
+      border-inline-start: 1px solid $color-border;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  }
+}
+
+.categories {
+  &__list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    list-style: none;
+  }
+
+  &__item,
+  &__details {
+    min-width: 0;
+  }
+
+  &__card {
+    width: 100%;
+    aspect-ratio: 355 / 400;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    top: auto;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__name {
+    margin-bottom: 6px;
+  }
+
+  &__arrow {
+    position: static;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.story {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+
+  &__media {
+    position: relative;
+    min-width: 0;
+    min-height: 450px;
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    min-width: 0;
+    padding: 0;
+    align-self: center;
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-items: start;
+    padding: 2rem 0 0;
+    text-align: center;
+  }
+
+  &__stat-description {
+    font-size: 14px;
+  }
+}
+
+.categories__title,
+.story__title,
+.inspiration__title,
+.testimonials__title {
+  font-size: clamp(2rem, 3.4vw, 45px);
+  word-spacing: normal;
+}
+
+.inspiration {
+  &__gallery {
+    height: clamp(520px, 43vw, 712px);
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__caption,
+  &__item--caption {
+    right: 24px;
+  }
+}
+
+.testimonials {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  &__card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 30px 0;
+  }
+
+  &__rating {
+    margin-top: 0;
+  }
+
+  &__quote {
+    flex-grow: 1;
+  }
+
+  &__author {
+    margin-top: auto;
+  }
+}
+
+.cta {
+  height: auto;
+  min-height: clamp(440px, 48vw, 700px);
+  padding: 4rem var(--page-gutter);
+
+  &__content {
+    width: 100%;
+    max-width: 52rem;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: clamp(2.5rem, 5.2vw, 80px);
+    word-spacing: normal;
+  }
+
+  &__description {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  &__button {
+    width: min(250px, 100%);
+    min-height: 48px;
+  }
+}
+
+.footer {
+  &__main {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) minmax(0, 1fr);
+    justify-items: start;
+    gap: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  &__brand,
+  &__navigation,
+  &__contact {
+    min-width: 0;
+  }
+
+  &__navigation {
+    display: block;
+  }
+
+  &__list {
+    margin-bottom: 0;
+  }
+
+  &__email {
+    overflow-wrap: anywhere;
+  }
+
+  &__link {
+    display: inline-block;
+    padding-block: 0.25rem;
+  }
+
+  &__socials {
+    margin-bottom: 0;
+  }
+
+  &__social-icon {
+    display: block;
+  }
+
+  &__bottom {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 24px;
+    margin-bottom: 0;
+  }
+
+  &__credit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --page-gutter: clamp(1.5rem, 4vw, 5rem);
+  }
+
+  .navbar__item {
+    margin-inline: 12px;
+  }
+
+  .benefits__item {
+    padding-inline: 1rem;
+  }
+
+  .benefits__icon {
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-gutter: 3rem;
+  }
+
+  .navbar {
+    &__logo {
+      font-size: 28px;
+      letter-spacing: 6px;
+    }
+
+    &__item {
+      margin-inline: 10px;
+    }
+
+    &__link {
+      font-size: 14px;
+    }
+
+    &__cta {
+      width: 160px;
+      font-size: 14px;
+    }
+  }
+
+  .hero {
+    &__title {
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+    }
+
+    &__content {
+      max-width: 620px;
+    }
+  }
+
+  .benefits {
+    &__item {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__icon {
+      margin-right: 0;
+    }
+  }
+
+  .categories {
+    &__content {
+      inset-inline: 18px;
+      bottom: 20px;
+    }
+
+    &__caption {
+      font-size: 14px;
+    }
+  }
+
+  .story__description {
+    font-size: 16px;
+  }
+
+  .testimonials__card {
+    padding-inline: 24px;
+  }
+
+  .testimonials__review-title {
+    font-size: 22px;
+  }
+
+  .footer {
+    &__main {
+      gap: 2rem;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
+
+    &__tagline {
+      letter-spacing: 1.5px;
+      word-spacing: normal;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .categories__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .categories__card {
+    aspect-ratio: 1 / 1;
+  }
+
+  .categories__content {
+    inset-inline: 24px;
+    bottom: 24px;
+  }
+
+  .categories__caption {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --page-gutter: 1.5rem;
+  }
+
+  .navbar__item {
+    margin-inline: 6px;
+  }
+
+  .site-header {
+    --hero-image-height: clamp(300px, 46vw, 440px);
+
+    min-height: 0;
+    padding-bottom: var(--hero-image-height);
+    background: $color-bg-primary;
+
+    &__image {
+      position: absolute;
+      bottom: 0;
+      height: var(--hero-image-height);
+      object-position: 72% center;
+    }
+
+    &__media::after {
+      top: auto;
+      height: var(--hero-image-height);
+      background: linear-gradient(to bottom, $color-bg-primary, rgba(248, 244, 238, 0) 28%);
+    }
+
+    &__video {
+      object-fit: contain;
+      background: $color-bg-dark;
+    }
+
+    &__story-close {
+      top: 5.5rem;
+      right: var(--page-gutter);
+      z-index: 4;
+    }
+
+    &--story-open {
+      .navbar__logo,
+      .navbar__toggle,
+      .navbar__link {
+        color: $color-text-light;
+      }
+
+    }
+  }
+
+  .hero {
+    &__content {
+      max-width: 560px;
+    }
+
+    &__description {
+      font-size: 17px;
+      word-spacing: normal;
+    }
+  }
+
+  .benefits {
+    padding-block: 1rem;
+
+    &__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__item {
+      flex-direction: row;
+      padding: 1.5rem;
+
+      &:nth-child(odd) {
+        border-inline-start: 0;
+      }
+
+      &:nth-child(n + 3) {
+        border-top: 1px solid $color-border;
+      }
+    }
+
+    &__icon {
+      margin-right: 4px;
+    }
+  }
+
+  .story {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+
+    &__media {
+      min-height: 0;
+      height: clamp(320px, 52vw, 480px);
+    }
+
+    &__content {
+      order: -1;
+      max-width: 48rem;
+    }
+
+    &__title {
+      margin-top: 16px;
+    }
+  }
+
+  .inspiration {
+    &__gallery {
+      height: auto;
+      grid-template-rows: none;
+      gap: 16px;
+    }
+
+    &__item {
+      grid-column: auto;
+      grid-row: auto;
+      aspect-ratio: 3 / 2;
+
+      &--featured {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        aspect-ratio: 3 / 2;
+      }
+    }
+
+    &__caption,
+    &__item--caption {
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    &__name {
+      font-size: 22px;
+    }
+  }
+
+  .footer__main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header--story-open .navbar__menu .navbar__link {
+    color: $color-link;
+  }
+
+  .navbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+
+    &__menu {
+      display: flex;
+      grid-column: 1 / -1;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid $color-border;
+      border-radius: 12px;
+      background: $color-bg-secondary;
+      color: $color-heading;
+    }
+
+    &__list {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+    }
+
+    &__item {
+      margin: 0;
+    }
+
+    &__link {
+      padding: 10px 0;
+      font-size: 16px;
+    }
+
+    &__cta {
+      width: 100%;
+      min-height: 44px;
+    }
+
+    &--enhanced &__toggle {
+      display: flex;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    &--enhanced &__menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      inset-inline: 0;
+      max-height: calc(100svh - 100px);
+      overflow-y: auto;
+      box-shadow: 0 12px 28px rgba(38, 29, 23, 0.12);
+    }
+
+    &--enhanced.navbar--menu-open &__menu {
+      display: flex;
+    }
+
+    &--menu-open &__toggle-line {
+      &:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+    }
+  }
+
+  .testimonials__list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .testimonials__card {
+    padding: 24px 24px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-gutter: 1.25rem;
+  }
+
+  .site-header {
+    --hero-image-height: clamp(260px, 75vw, 420px);
+  }
+
+  .navbar__logo {
+    font-size: 26px;
+    letter-spacing: 6px;
+  }
+
+  .hero {
+    margin-block: 2rem 1.5rem;
+
+    &__title {
+      font-size: clamp(2.625rem, 12vw, 3.75rem);
+      max-width: 10ch;
+    }
+
+    &__eyebrow {
+      margin-bottom: 16px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    &__description {
+      font-size: 16px;
+    }
+
+    &__actions {
+      margin-top: 24px;
+      gap: 16px;
+    }
+
+    &__actions--button {
+      padding: 14px;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    &__watch {
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    &__watch-icon {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__scroll {
+      margin-top: 24px;
+    }
+  }
+
+  .categories,
+  .story,
+  .inspiration,
+  .testimonials,
+  .footer {
+    padding-block: 2.5rem;
+  }
+
+  .categories__eyebrow,
+  .story__eyebrow,
+  .inspiration__eyebrow,
+  .testimonials__eyebrow {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .benefits {
+    &__item {
+      flex-direction: column;
+      padding: 1.25rem 0.75rem;
+    }
+
+    &__icon {
+      margin: 0;
+      width: 30px;
+      height: 30px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__description {
+      font-size: 13px;
+    }
+  }
+
+  .story {
+    &__media {
+      height: auto;
+      aspect-ratio: 6 / 5;
+    }
+
+    &__description {
+      margin-block: 20px;
+    }
+
+    &__stats {
+      margin-top: 24px;
+      padding-top: 24px;
+    }
+
+    &__stat-description {
+      font-size: 12px;
+    }
+  }
+
+  .inspiration {
+    &__gallery {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__item--featured {
+      aspect-ratio: 1 / 1;
+    }
+
+    &__name {
+      font-size: 23px;
+    }
+
+    &__label {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  .cta {
+    margin-top: 0;
+    min-height: 480px;
+
+    &__description {
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+
+  .footer {
+    &__main {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    &__brand {
+      grid-column: auto;
+    }
+
+    &__logo {
+      font-size: 36px;
+      letter-spacing: 8px;
+    }
+
+    &__description {
+      font-size: 17px;
+    }
+
+    &__tagline {
+      font-size: 13px;
+    }
+
+    &__bottom {
+      align-items: flex-start;
+      flex-direction: column;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .categories {
+    &__list {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    &__card {
+      aspect-ratio: 4 / 5;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .hero__actions--button {
+    width: 100%;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .story__stat-number {
+    font-size: 26px;
+  }
+
+  .testimonials__review-title {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar__toggle-line {
+    transition: none;
+  }
+}
