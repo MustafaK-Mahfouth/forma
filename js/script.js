@@ -215,3 +215,32 @@ function updateScrollBehavior() {
 
 updateScrollBehavior();
 scrollMotionPreference.addEventListener("change", updateScrollBehavior);
+
+
+// Keep one navigation available throughout the page without shifting the hero.
+if (navbar) {
+  const navigationPlaceholder = document.createElement("div");
+  navigationPlaceholder.className = "navbar__placeholder";
+  navigationPlaceholder.setAttribute("aria-hidden", "true");
+  navbar.before(navigationPlaceholder);
+  navbar.classList.add("navbar--fixed");
+
+  function updateNavigationHeight() {
+    const height = navbar.getBoundingClientRect().height;
+    navigationPlaceholder.style.height = height + "px";
+    document.documentElement.style.scrollPaddingTop = (height + 16) + "px";
+  }
+
+  function updateNavigationSurface() {
+    navbar.classList.toggle("navbar--scrolled", window.scrollY > 40);
+  }
+
+  updateNavigationHeight();
+  updateNavigationSurface();
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(updateNavigationHeight).observe(navbar);
+  } else {
+    window.addEventListener("resize", updateNavigationHeight);
+  }
+  window.addEventListener("scroll", updateNavigationSurface, { passive: true });
+}

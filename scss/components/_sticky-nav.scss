@@ -1,0 +1,45 @@
+// The placeholder keeps the hero in place when navigation becomes fixed.
+.navbar__placeholder {
+  pointer-events: none;
+}
+
+.navbar.navbar--fixed {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  margin: 0;
+  padding: 1rem var(--page-gutter);
+  background-color: transparent;
+  transition: background-color 250ms ease, box-shadow 250ms ease;
+
+  &.navbar--scrolled {
+    background-color: $color-bg-primary;
+    box-shadow: 0 3px 18px rgba(38, 29, 23, 0.08);
+
+    .navbar__logo,
+    .navbar__toggle {
+      color: $color-heading;
+    }
+
+    .navbar__link {
+      color: $color-link;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-link-hover;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar.navbar--fixed .navbar__menu {
+    inset-inline: var(--page-gutter);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar.navbar--fixed {
+    transition: none;
+  }
+}
